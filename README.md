@@ -1,2 +1,4 @@
-# UnrealCourse_BattleTank
-UnrealCourse 04 Battle Tank
+# BattleTank
+
+Section 04 of UnrealCourse
+
