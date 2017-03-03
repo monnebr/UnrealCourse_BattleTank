@@ -21,10 +21,19 @@ public:
 	virtual void BeginPlay() override;
 
 	virtual void Tick( float DeltaTime ) override;
-	
+
+	UPROPERTY(EditAnywhere)
+	float CrossHairXLocation = 0.5;
+
+	UPROPERTY(EditAnywhere)
+	float CrossHairYLocation = 0.33333;
+
 private:
 	// start the tank moving the barrel so that the shot would hit where the crosshair interset the shot
 	void AimTowardsCrosshair();
 
 	bool GetSightRayHitLocation(FVector& HitLocation) const;
+
+	FVector2D ScreenLocation(int32 ViewportWidth, int32 ViewportHeight) const;
+
 };
