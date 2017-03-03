@@ -28,6 +28,9 @@ public:
 	UPROPERTY(EditAnywhere)
 	float CrossHairYLocation = 0.33333;
 
+	UPROPERTY(EditAnywhere)
+	float LineTraceRange = 1000000;
+
 private:
 	// start the tank moving the barrel so that the shot would hit where the crosshair interset the shot
 	void AimTowardsCrosshair();
@@ -36,4 +39,7 @@ private:
 
 	FVector2D ScreenLocation(int32 ViewportWidth, int32 ViewportHeight) const;
 
+	bool GetLookDirection(FVector2D ScreenLocation, FVector& LookDirection) const;
+
+	bool GetLookVectorHitLocation(FVector LookDirection, FVector& HitLocation) const;
 };
