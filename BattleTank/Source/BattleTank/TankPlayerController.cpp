@@ -11,18 +11,14 @@ ATank* ATankPlayerController::GetControlledTank() const
 
 void ATankPlayerController::BeginPlay()
 {
-	// APlayerController::BeginPlay();
 	Super::BeginPlay();
-
-	UE_LOG(LogTemp, Warning, TEXT("PlayerController BeginPlay() "));
 
 	auto ControlledTank = GetControlledTank();
 	if (ControlledTank) {
 		FString tankName = ControlledTank->GetName();
-		UE_LOG(LogTemp, Warning, TEXT("Tank name is  %s"), *tankName);
+		UE_LOG(LogTemp, Warning, TEXT("ATankPlayerController control %s"), *tankName);
 	}
 	else {
-		UE_LOG(LogTemp, Warning, TEXT("NO TANK!!!!"));
+		UE_LOG(LogTemp, Warning, TEXT("ATankPlayerController do not control a tank!"));
 	}
-
 }
