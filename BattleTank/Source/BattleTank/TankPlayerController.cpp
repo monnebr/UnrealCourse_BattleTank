@@ -22,3 +22,16 @@ void ATankPlayerController::BeginPlay()
 		UE_LOG(LogTemp, Warning, TEXT("ATankPlayerController do not control a tank!"));
 	}
 }
+
+void ATankPlayerController::Tick(float DeltaTime)
+{
+	Super::Tick( DeltaTime );
+
+	AimTowardsCrosshair();
+}
+
+void ATankPlayerController::AimTowardsCrosshair()
+{
+//	UE_LOG(LogTemp, Warning, TEXT("AimTowardsCrosshair"));
+	if (!GetControlledTank()) { return; }
+}
