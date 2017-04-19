@@ -40,7 +40,7 @@ void ATankPlayerController::AimTowardsCrosshair()
 	// Get world location of aimed by crosshair
 	if (GetSightRayHitLocation(HitLocation)) 
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Hit Location: %s"), *HitLocation.ToString());
+        GetControlledTank()->AimAt(HitLocation);
 	}
 }
 
