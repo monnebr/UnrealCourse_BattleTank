@@ -27,8 +27,10 @@ public:
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 public:
-    void AimAt(FVector HitLocation);
+    void AimAt(FVector HitLocation, float LaunchSpeed);
 		
 private:
     UStaticMeshComponent* Barrel = nullptr;
+    
+    void MoveBarrelTowards(FVector AimDirection);
 };

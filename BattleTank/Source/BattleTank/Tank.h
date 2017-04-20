@@ -1,4 +1,6 @@
+
 #pragma once
+
 
 #include "GameFramework/Pawn.h"
 #include "TankAimingComponent.h"
@@ -31,6 +33,10 @@ private:
     virtual void Tick( float DeltaSeconds ) override;
     
     virtual void SetupPlayerComponent(class UInputComponent* InputComponent);
+    
+    UPROPERTY(EditAnywhere, Category = Firing)
+    float LaunchSpeed = 100000; // Sensible starting value of 100 m/s
+    
     
 };
 
