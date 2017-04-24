@@ -4,7 +4,8 @@
 
 ATank::ATank()
 {
- 
+	PrimaryActorTick.bCanEverTick = false;
+
     TankAimingComponent = CreateDefaultSubobject<UTankAimingComponent>(FName("Aiming Component"));
 }
 
@@ -12,11 +13,6 @@ void ATank::BeginPlay()
 {
     Super::BeginPlay();
     
-}
-
-void ATank::Tick( float DeltaSeconds )
-{
-    Super::Tick(DeltaSeconds);
 }
 
 void ATank::SetupPlayerComponent(class UInputComponent* InputComponent)

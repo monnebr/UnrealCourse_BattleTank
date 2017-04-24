@@ -79,9 +79,10 @@ void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed)
         //UE_LOG(LogTemp, Warning, TEXT("%s aiming at %s"), *TankName, *AimDirection.ToString());
         MoveBarrelTowards(AimDirection);
     }
-    //else {
-    //    UE_LOG(LogTemp, Error, TEXT("SuggestProjectileVelocity() failed"));
-    // }
+    else {
+		auto Time = GetWorld()->GetTimeSeconds();
+		UE_LOG(LogTemp, Warning, TEXT("%f: No aim solve found"), Time);
+	}
 }
 
 void UTankAimingComponent::MoveBarrelTowards(FVector AimDirection)

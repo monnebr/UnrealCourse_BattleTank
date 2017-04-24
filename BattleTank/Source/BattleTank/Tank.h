@@ -31,9 +31,7 @@ private:
     ATank();
     
     virtual void BeginPlay() override;
-    
-    virtual void Tick( float DeltaSeconds ) override;
-    
+     
     virtual void SetupPlayerComponent(class UInputComponent* InputComponent);
     
     UPROPERTY(EditAnywhere, Category = Firing)
