@@ -3,11 +3,11 @@
 #pragma once
 
 #include "Components/ActorComponent.h"
-#include "Components/StaticMeshComponent.h"
 #include "TankAimingComponent.generated.h"
 
 // forward declration
 class UTankBarrel;
+class UTankTurret;
 
 // Hold barrel's property and elevates methods
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
@@ -20,6 +20,7 @@ public:
 	UTankAimingComponent();
     
     void SetBarrelReference(UTankBarrel* BarrelToSet);
+	void SetTurretReference(UTankTurret* TurretToSet);
 
 protected:
 	// Called when the game starts
@@ -34,6 +35,8 @@ public:
 		
 private:
     UTankBarrel* Barrel = nullptr;
-    
+	UTankTurret* Turret = nullptr;
+
     void MoveBarrelTowards(FVector AimDirection);
+	void MoveTurretTowards(FVector AimDirection);
 };
