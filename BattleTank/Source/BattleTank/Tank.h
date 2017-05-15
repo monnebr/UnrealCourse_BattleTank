@@ -42,13 +42,18 @@ private:
      
     virtual void SetupPlayerComponent(class UInputComponent* InputComponent);
     
-    UPROPERTY(EditAnywhere, Category = Firing)
+    UPROPERTY(EditDefaultsOnly, Category = Firing)
     float LaunchSpeed = 4000; // Sensible starting value of 100 m/s
     
-	UPROPERTY(EditAnywhere, Category = Setup)
+	UPROPERTY(EditDefaultsOnly, Category = Setup)
 	TSubclassOf<AProjectile> ProjectileBlueprint;
+
+	UPROPERTY(EditDefaultsOnly, Category = Firing)
+	float ReloadTimeInSeconds = 3;
 
 	// Local barrel reference for spawning a projectile
 	UTankBarrel* Barrel = nullptr;
+
+	double LastFireTime = 0;
 };
 
