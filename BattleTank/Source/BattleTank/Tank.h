@@ -11,7 +11,7 @@ class UTankTurret;
 class AProjectile;
 
 /**
-*
+* New comment
 */
 UCLASS()
 class BATTLETANK_API ATank : public APawn
